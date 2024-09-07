@@ -23,17 +23,14 @@
 .header_right ul{
   width: 140%;
   display: flex;
-  list-style: none;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-
 
 }
 .header_left ul{
   width: 140%;
   display: flex;
-  list-style: none;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
