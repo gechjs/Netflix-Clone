@@ -8,10 +8,8 @@ const requests = {
     fetchHorrorMovies: `/discover/movie?api_key=${API_KEY}&with_genres=27`,
     fetchRomanceMovies: `/discover/movie?api_key=${API_KEY}&with_genres=10749`,
     fetchDocumentaries: `/discover/movie?api_key=${API_KEY}&with_genres=99`,
-    fetchTvShow: `tv/pupular?api_key=${API_KEY}&language=en-US&page=1`,
+    fetchTvShow: `discover/tv?api_key=${API_KEY}&language=en-US&page=1`,
     
 };
 
 export default requests
-'https://api.themoviedb.org/3/discover/movie?api_key=ced415cb2db1fd6f47675ff3d93fecc2'
-'https://api.themoviedb.org/3/'

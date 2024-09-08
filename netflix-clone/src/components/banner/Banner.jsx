@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import instance from "../../utils/axios";
 import requests from "../../utils/request";
-import './css/banner.css';
+import "./css/banner.css";
 
 const Banner = () => {
   const [movie, setMovie] = useState({});
@@ -10,11 +10,12 @@ const Banner = () => {
     const getMovie = async () => {
       try {
         const response = await instance.get(requests.fetchNetflixOriginals);
-        console.log(response.data.results); // Log results to check the data
-        const randomMovie = response.data.results[
-          Math.floor(Math.random() * response.data.results.length)
-        ];
-        console.log(randomMovie); // Log the selected movie
+        console.log(response.data.results);
+        const randomMovie =
+          response.data.results[
+            Math.floor(Math.random() * response.data.results.length)
+          ];
+        console.log(randomMovie); 
         setMovie(randomMovie);
       } catch (error) {
         console.log(error);
@@ -24,17 +25,13 @@ const Banner = () => {
     getMovie();
   }, []);
 
-  const truncate = (str, n) => {
-    return str?.length > n ? str.slice(0, n - 1) + '...' : str;
-  }
-
   return (
     <div
       className="banner"
       style={{
         backgroundSize: "cover",
         backgroundImage: `url("https://image.tmdb.org/t/p/original${movie?.backdrop_path}")`,
-        backgroundPosition: "center",
+        backgroundPosition: "center top",
         backgroundRepeat: "no-repeat",
       }}
     >
@@ -46,7 +43,11 @@ const Banner = () => {
           <div className="banner_button play">Play</div>
           <div className="banner_button">My List</div>
         </div>
-        <h1 className="banner_description">{truncate(movie?.overview || '', 150)}</h1>
+        <h1 className="banner_description">
+          {(movie?.overview)?.length > 150
+            ? movie?.overview.slice(0, 150) + "..."
+            : movie?.overview}
+        </h1>
       </div>
       <div className="banner_fadeBottom" />
     </div>
