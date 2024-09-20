@@ -3,17 +3,18 @@
   top: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: rgb(20, 20, 20);
-
-  /* background-color: transparent; */
+  background-color: transparent;
   color: white;
   transition: all 0.5s;
   transition-timing-function: ease-in;
   z-index: 1;
   height: 10vh;
 }
+input{
+  border: 2px solid wheat;
+  border-radius: 8px;
 
+}
 .header_container{
   width: 90%;
   display: flex;

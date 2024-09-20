@@ -38,8 +38,8 @@
     transition: all 0.2s;
 }
 .play{
-    color: #111;
-    background-color: #fff;
+    background-color: var(--bg-color);
+  /* color: #111; */
     transition: all 0.2s;
 }
 .banner_description{
